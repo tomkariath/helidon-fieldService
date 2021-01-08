@@ -3,7 +3,6 @@ package com.oracle.fieldService.models;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -16,7 +15,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ACTIVITY_TYPE")
 @NamedQueries({
-	@NamedQuery (name = "ActivityType.findAll", query = "select at from ActivityType at")
+	@NamedQuery (name = "ActivityType.findAll", query = "select at from ActivityType at"),
+	@NamedQuery (name = "ActivityType.findByActivityTypeCode", query = "select at from ActivityType at where at.activityTypeCode = :activityTypeCode")
 })
 public class ActivityType {
 

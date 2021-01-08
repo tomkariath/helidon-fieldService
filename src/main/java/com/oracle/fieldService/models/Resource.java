@@ -8,9 +8,9 @@ import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Access(value = AccessType.FIELD)
@@ -29,7 +29,7 @@ public class Resource {
 	String password;
 	
 	@ManyToOne
-	@JoinColumn(name = "RESOURCE_ID")
+	@PrimaryKeyJoinColumn(name = "RESOURCE_ID")
 	Resource supervisor;
 	
 	@Column(name = "START_DATE")

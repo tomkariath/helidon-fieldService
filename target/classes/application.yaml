@@ -9,4 +9,18 @@ javax:
           url: jdbc:h2:file:./data/fieldService;INIT=RUNSCRIPT FROM 'classpath:fieldservice.ddl'
           user: sa
           password: ""
-            
+security:
+  config:
+    require-encryption: false
+  
+  providers:
+    - http-basic-auth:
+        realm: "fieldService"
+        users:
+          - login: "admin"
+            password: "${CLEAR=password}"
+            roles: ["user", "admin"]
+          - login: "user"
+            password: "${CLEAR=password}"
+            roles: ["user"]
+    - http-digest-auth:

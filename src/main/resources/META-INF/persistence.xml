@@ -9,6 +9,9 @@
         <jta-data-source>fieldserviceDataSource</jta-data-source> 
         <class>com.oracle.fieldService.jpa.Greeting</class>
         <class>com.oracle.fieldService.models.ActivityType</class> 
+        <class>com.oracle.fieldService.models.Activity</class>
+        <class>com.oracle.fieldService.models.Resource</class>
+        <class>com.oracle.fieldService.models.Inventory</class> 
         <properties> 
             <property name="eclipselink.deploy-on-startup" value="true"/>
             <property name="eclipselink.jdbc.native-sql" value="true"/>

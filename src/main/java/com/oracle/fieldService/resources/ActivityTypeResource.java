@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -29,4 +30,11 @@ public class ActivityTypeResource {
 		List<Object> activityTypes = em.createQuery(cq).getResultList();
 		return activityTypes;
 	}
+	
+	@GET
+    @Path("/{activityTypeCode}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ActivityType findActivityType(@PathParam("activityTypeCode") Long activityTypeCode) {
+        return em.find(ActivityType.class, activityTypeCode);
+    }
 }

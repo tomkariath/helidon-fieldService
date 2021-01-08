@@ -29,6 +29,18 @@
 			<artifactId>helidon-microprofile</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>io.helidon.security.providers</groupId>
+			<artifactId>helidon-security-providers-http-auth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.helidon.security</groupId>
+			<artifactId>helidon-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.helidon.security.integration</groupId>
+			<artifactId>helidon-security-integration-webserver</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.jboss</groupId>
 			<artifactId>jandex</artifactId>
 			<scope>runtime</scope>
