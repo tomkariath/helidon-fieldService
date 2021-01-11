@@ -4,11 +4,11 @@ javax:
   sql:
     DataSource:
       fieldserviceDataSource:
-        dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+        dataSourceClassName: com.mysql.cj.jdbc.MysqlDataSource
         dataSource: 
-          url: jdbc:h2:file:./data/fieldService;INIT=RUNSCRIPT FROM 'classpath:fieldservice.ddl'
-          user: sa
-          password: ""
+          url: jdbc:mysql://localhost:3306/fieldService
+          user: root
+          password: "oracle123@"
 security:
   config:
     require-encryption: false
@@ -18,7 +18,7 @@ security:
         realm: "fieldService"
         users:
           - login: "admin"
-            password: "${CLEAR=password}"
+            password: "${CLEAR=admin}"
             roles: ["user", "admin"]
           - login: "user"
             password: "${CLEAR=password}"
